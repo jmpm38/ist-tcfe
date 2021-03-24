@@ -112,7 +112,7 @@
 
 For the first experimental activity in the Circuit Theory and Electronics Fundamentals course, we were given a simple circuit to analyse, in relation to the contents presented in the first three weeks of the semester.
 This circuit is constituted by a dependent and independent voltage source, a dependent and independent current source and 7 resistors (fig. \ref{intro}).
-In order to solve the circuit we performed a theoretical analysis, using the node and mesh methods (Section \ref{sec:analysis}), and a simulation, using the software NGSpice (Section \ref{simuanal}). We then compared both results and tried to validate our theoretical analysis (Section \ref{resan}).
+In order to solve the circuit we performed a theoretical analysis, using the node and mesh methods (Section \ref{sec:analysis}), and a simulation, using the software Ngspice (Section \ref{simuanal}). We then compared both results and tried to validate our theoretical analysis (Section \ref{resan}).
 
 \begin{figure}[htb!]
 			\begin{center}
@@ -141,7 +141,7 @@ Id        & 1.01155034907           \\ \hline
 Kb        & 7.33855517177           \\ \hline
 Kc        & 8.2581000183            \\ \hline
 \end{tabular}
-\caption{Inicial data. Resistors and Kc in kOhm, Voltage in V, Current inmA and Kb in mS}
+\caption{Inicial data. Resistors and Kc in kOhm, Voltage in V, Current in mA and Kb in mS}
 \end{center}
 \end{table}
 
@@ -154,8 +154,8 @@ In this section, we expose and explain the methods used to solve and analyse the
 
 \subsection{Mesh Method}
 
-The Mesh Analyses consists in defining circulating currents in all the simple meshes, and then calculating them. So, 
-with this method we determine the currents I1, I2, I3 and I4. This results were achieved looking to the  loop formed by R1, R3, R4 and Va and other loop formed by R4, R6, R7 and Vc. The circulating currents are I1 and I3, respectively.  The third independent equation were obtained equaling I2 to Kb*Vb and Vb to (I2+I3)*R3. The last and fourth equation is a very simple one, we just equal I4 to -Id. To solve this system of linear equations we  rearranged them in the matrix form below, and we obtained the solution using Octave math tools.\\
+The Mesh Analysis consists in defining circulating currents in all the simple meshes, and then calculating them. So, 
+with this method we determine the currents I1, I2, I3 and I4. This results were achieved looking to the  loop formed by R1, R3, R4 and Va and other loop formed by R4, R6, R7 and Vc. The circulating currents are I1 and I3, respectively.  The third independent equation was obtained equaling I2 to Kb*Vb and Vb to (I2+I3)*R3. The last and fourth equation is a very simple one, we just equal I4 to -Id. To solve this system of linear equations we  rearranged them in the matrix form below, and we obtained the solution using Octave math tools.\\
 
 $\begin{bmatrix}
 R1+R3+R4 & -R3 & -R4 & 0\\
@@ -212,7 +212,7 @@ R7(i)     & 9.4758e-4                   \\ \hline
 \end{table}
 
 \subsection{Node Method}
-The objective of this method is to determine every node voltage. To do this we have to first number nodes arbitrarily, assign potential 0V (Ground) to one of the nodes, and then calculate all the voltages. We had 7 unknown variables, so we determined 7 independent equations. This equations were obtained doing KCL in nodes 1,2,3,6 and 7; knowing that Va=V4-V5; and using the fact that V7 equals Vc, that in turn equals Kc*Ic. The equations were rearranged in the matrix form below, in order to find the solution using Octave math tools.\\
+The objective of this method is to determine every node voltage. To do this we have to first number nodes arbitrarily, assign potential 0V (Ground) to one of the nodes, and then calculate all the voltages. We had 7 unknown variables, so we determined 7 independent equations. This equations were obtained doing KCL in nodes 1, 2, 3, 6 and 7; knowing that Va=V4-V5; and using the fact that V7 equals Vc, that in turn equals Kc*Ic. The equations were rearranged in the matrix form below, in order to find the solution using Octave math tools.\\
 
 
 $\begin{bmatrix}
@@ -271,12 +271,13 @@ Just like we expected, the results of both methods are coincident. Therefore, we
 \newpage
 \section{Simulation Analysis}
 \label{simuanal}
-With the objective of solving the given circuit, we began by drawing a sketch of it, which can be seen in the picture below.
+\subsection{Operating Point Analysis}
+With the purpose of solving the given circuit, we began by drawing a sketch of it, which can be seen in the picture below.
 
 \begin{figure}[htb!]
 			\begin{center}
 				\includegraphics[width=10cm]{Simulacao.png}
-				\caption{Analyzed Circuit in NGSpice}
+				\caption{Analyzed Circuit in Ngspice}
 			\end{center}
 \end{figure}
 
@@ -284,11 +285,11 @@ In order to understand our approach, it is important to note the following:
 
 - We considered the node to which we connect resistor R7, Current Source Id and Dependent Voltage Source Vc to be the ground (node 0 in the picture).
 
--To compute the voltage drop through the dependent voltage source (Vc), we needed to obtain the current value through resistor R6. However, NGSpice doesn't allow us to input Resistor R6 current in the computation. Hence, in order to solve this problem, we consulted an online forum which stated that this problem could be solved by introducing a voltage source with no voltage drop in series with the R6 resistor. This way, we managed to obtain the current through it, and therefore we were able to compute the dependent voltage source Vc.
+-To compute the voltage drop through the dependent voltage source (Vc), we needed to obtain the current value through resistor R6. However, Ngspice doesn't allow us to input Resistor R6 current in the computation. Hence, in order to solve this problem, we introduced a voltage source with no voltage drop in series with the R6 resistor. This way, we managed to obtain the current through it, and therefore we were able to compute the dependent voltage source Vc.
 
-NGSpice is a really useful tool, which allows us to compute the circuit and obtain all the necessary parameters. After carefully writing the script, in which we specify the nodes where we connect every single component and create the necessary dependencies for the dependent sources, we obtain the following table after typing the \textit{ngspice script.name} command in a terminal window.
+Ngspice is a really useful tool, which allows us to compute the circuit and obtain all the necessary parameters. After carefully writing the script, in which we specify the nodes where we connect every single component and create the necessary dependencies for the dependent sources, we obtain the following table after typing the \textit{ngspice script.name} command in a terminal window.
 
-In this table, we can see the voltage at any given node, the current through each resistor and the voltage and current sources. (We use the ngspice terminology: @-current value; Also, voltage value at node 0 (0V) is not shown)
+In this table, we can see the voltage at any given node, the current through each resistor and the voltage and current sources. (We use the Ngspice terminology: @-current value; Also, voltage value at node 0 (0V) is not shown)
 \clearpage
 \begin{table}[h]
 \label{tab1}
@@ -315,7 +316,7 @@ v(7)             & 7.825301e+00            \\\hline
 v(8)             & 9.831754e-01         \\\hline
 
 \end{tabular}
-\caption{Results from NGSpice} \label{tab:sometab}
+\caption{Results from Ngspice} \label{tab:sometab}
 \end{center}
 \
 \end{table}
@@ -342,7 +343,7 @@ IA & 1.30833e-04 \\\hline
 IB & 1.58757e-03 \\\hline
 IC & 1.87847e-04 \\\hline
 \end{tabular}
-\caption{Relative Error between Octave's and NGSpice's values}
+\caption{Relative Error between Octave's and Ngspice's values}
 \end{center}
 \end{table}
 

@@ -5,4 +5,5 @@
 \contentsline {subsection}{\numberline {2.2}Node Method}{4}{subsection.2.2}%
 \contentsline {paragraph}{}{5}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Simulation Analysis}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Operating Point Analysis}{6}{subsection.3.1}%
 \contentsline {section}{\numberline {4}Results Analysis, Errors and Conclusion}{7}{section.4}%

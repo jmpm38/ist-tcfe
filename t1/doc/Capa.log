@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.10)  24 MAR 2021 22:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.13)  24 MAR 2021 22:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -506,7 +506,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 62.
 \c@lstlisting=\count291
-<./Imagens/tecnico.png, id=28, 361.35pt x 140.525pt>
+<./Imagens/tecnico.png, id=32, 361.35pt x 140.525pt>
 File: ./Imagens/tecnico.png Graphic file (type png)
 <use ./Imagens/tecnico.png>
 Package pdftex.def Info: ./Imagens/tecnico.png  used on input line 69.
@@ -535,7 +535,7 @@ been already used, duplicate ignored
                    \relax 
 l.107 \newpage
                [1]
-<./Imagens/Intro.png, id=54, 1020.81375pt x 747.79375pt>
+<./Imagens/Intro.png, id=59, 1020.81375pt x 747.79375pt>
 File: ./Imagens/Intro.png Graphic file (type png)
 <use ./Imagens/Intro.png>
 Package pdftex.def Info: ./Imagens/Intro.png  used on input line 119.
@@ -558,30 +558,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--216
 [4
 
 ] [5]
-<./Imagens/Simulacao.png, id=82, 985.6825pt x 739.76375pt>
+<./Imagens/Simulacao.png, id=87, 985.6825pt x 739.76375pt>
 File: ./Imagens/Simulacao.png Graphic file (type png)
 <use ./Imagens/Simulacao.png>
-Package pdftex.def Info: ./Imagens/Simulacao.png  used on input line 278.
+Package pdftex.def Info: ./Imagens/Simulacao.png  used on input line 279.
 (pdftex.def)             Requested size: 284.52756pt x 213.54395pt.
  [6 <./Imagens/Simulacao.png>] 
 AED: lastpage setting LastPage
 [7
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 351.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 351.
  (./Capa.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 351.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 351.
 Package rerunfilecheck Info: File `Capa.out' has not changed.
-(rerunfilecheck)             Checksum: 45818EA853EC903DA8BE68CA4488A15F;350.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 350.
+(rerunfilecheck)             Checksum: EE7EC8775E0798B25F17B5E29B9DDCA1;423.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 351.
  ) 
 Here is how much of TeX's memory you used:
- 10433 strings out of 481239
- 156754 string characters out of 5920377
- 644935 words of memory out of 5000000
- 25481 multiletter control sequences out of 15000+600000
+ 10435 strings out of 481239
+ 156784 string characters out of 5920377
+ 644937 words of memory out of 5000000
+ 25482 multiletter control sequences out of 15000+600000
  541899 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,11n,46p,939b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -594,10 +594,10 @@ dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmti10.pfb>
-Output written on Capa.pdf (7 pages, 298206 bytes).
+Output written on Capa.pdf (7 pages, 298871 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 64 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 72 words of extra memory for PDF output out of 10000 (max. 10000000)
 
