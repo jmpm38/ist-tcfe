@@ -1,0 +1,28 @@
+GROUP 21 - LAB 2 TCFE
+
+* NGSPICE simulation script
+* Question 1
+
+.include ../mat/question_1.cir
+
+* forces current values to be saved
+.options savecurrents
+
+
+.model group 21
+
+.control
+
+op
+
+echo "*******************"
+echo RESULTS - QUESTION 1
+echo "*******************"
+
+print all
+
+quit
+.endc
+
+.end
+

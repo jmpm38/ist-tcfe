@@ -1,0 +1,40 @@
+GROUP 21 - LAB 2 TCFE
+
+* NGSPICE simulation script
+* Question 3
+
+.include ../mat/question_3.cir
+
+* forces current values to be saved
+.options savecurrents
+
+
+.model group 21
+
+.control
+*setting plot parameters
+set hcopypscolor=0
+set color0=white
+set color1=black	
+set color2=red
+set color3=blue
+set color4=violet
+set color5=rgb3/8/0
+set color6=rgb4/0/0
+op
+
+echo "*******************"
+echo TRANSIENT ANALYSIS - QUESTION 3
+echo "*******************"
+
+tran 1e-5 20e-3
+
+hardcopy question_3.ps v(6)
+echo qustion_3_fig
+
+
+quit
+.endc
+
+.end
+
