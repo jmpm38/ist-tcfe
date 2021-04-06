@@ -1,0 +1,84 @@
+
+Circuit: *
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 1
+********************************************
+Operating point
+********************************************
+Error(parse.c--checkvalid): vcc: no such vector.
+Error: no such device or model name q1
+Error(parse.c--checkvalid): @q1[ic]: no such vector.
+Error: no such device or model name rf
+Error(parse.c--checkvalid): @rf[i]: no such vector.
+op_TAB
+@id[current] = 1.011550e-03
+@r1[i] = 6.767035e-04
+@r2[i] = 0.000000e+00
+@r3[i] = 6.767035e-04
+@r4[i] = 5.597362e-04
+@r5[i] = 1.011550e-03
+@r6[i] = -1.16967e-04
+@r7[i] = -1.16967e-04
+v(1) = -1.13623e+00
+v(2) = 4.044066e+00
+v(3) = 4.044066e+00
+v(4) = 4.753926e+00
+v(5) = -3.60303e-01
+v(6) = -1.21361e-01
+v(7) = 1.973226e+00
+ec#branch = -8.94583e-04
+va#branch = -6.76703e-04
+op_END
+********************************************
+Transient analysis
+********************************************
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+7                                      1.97323
+6                                    -0.121361
+5                                    -0.360303
+4                                      4.75393
+3                                      4.04407
+1                                     -1.13623
+2                                      4.04407
+ec#branch                         -0.000894583
+va#branch                         -0.000676703
+
+
+No. of Data Rows : 1008
+Error: no such vector coll
+com_hardcopy: graph not defined
+ERROR: (internal)  tried to destroy non-existent graph
+trans_FIG
+********************************************
+Frequency analysis
+********************************************
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 71
+Error: no such vector coll
+com_hardcopy: graph not defined
+ERROR: (internal)  tried to destroy non-existent graph
+acm_FIG
+Error: no such vector base
+com_hardcopy: graph not defined
+ERROR: (internal)  tried to destroy non-existent graph
+acp_FIG
+********************************************
+Input impedance
+********************************************
+Error: no such vector coll
+com_hardcopy: graph not defined
+ERROR: (internal)  tried to destroy non-existent graph
+zim_FIG
+ngspice-31 done
