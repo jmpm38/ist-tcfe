@@ -19,7 +19,7 @@ Kb=sscanf(char(t(13,1)), "Kb = %e")/1000;
 Kd=sscanf(char(t(14,1)), "Kd = %e")*1000;
 
 printf("Data_Gen_TAB\n");
-printf("R1 = %e kOh,\n",R1);
+printf("R1 = %e kOhm\n",R1);
 printf("R2 = %e kOhm\n",R2);
 printf("R3 = %e kOhm\n",R3);
 printf("R4 = %e kOhm\n",R4);
