@@ -10,7 +10,8 @@ GROUP 21 - LAB 2 TCFE
 
 
 .model group 21
-
+.op
+.end
 .control
 *setting plot parameters
 set hcopypscolor=0
@@ -35,8 +36,7 @@ echo question5_db_FIG
 hardcopy question5_ph.ps ph(v(1))*180/pi ph(v(6))*180/pi
 echo question5_ph_FIG
 
-quit
+
 .endc
 
-.end
 

@@ -10,7 +10,8 @@ GROUP 21 - LAB 2 TCFE
 
 
 .model group 21
-
+.op
+.end
 .control
 *setting plot parameters
 set hcopypscolor=0
@@ -30,11 +31,8 @@ echo "*******************"
 tran 1e-5 20e-3
 
 hardcopy question_3.ps v(6)
-echo qustion_3_fig
+echo question_3_FIG
 
 
-quit
 .endc
-
-.end
 

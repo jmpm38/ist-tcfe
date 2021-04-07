@@ -1,0 +1,187 @@
+\documentclass[11en, a4paper, oneside]{article}
+\usepackage[utf8]{inputenc}   % <<<<< Linux
+\usepackage[english]{babel} % <<<<< English
+\usepackage{notoccite}
+\usepackage[skip=0.5\baselineskip]{caption}
+\hyphenation{GTKWave}
+\usepackage{listings}
+\usepackage[all]{nowidow}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{float}
+
+%blind text
+\usepackage{lipsum}
+
+\usepackage{graphicx}
+\graphicspath{ {./} {../../figlib/} }
+\def\FontLn{% 16 pt normal
+  \usefont{T1}{phv}{m}{n}\fontsize{16pt}{16pt}\selectfont}
+\def\FontLb{% 16 pt bold
+  \usefont{T1}{phv}{b}{n}\fontsize{16pt}{16pt}\selectfont}
+\def\FontMn{% 14 pt normal
+  \usefont{T1}{phv}{m}{n}\fontsize{14pt}{14pt}\selectfont}
+\def\FontMb{% 14 pt bold
+  \usefont{T1}{phv}{b}{n}\fontsize{14pt}{14pt}\selectfont}
+\def\FontSn{% 12 pt normal
+  \usefont{T1}{phv}{m}{n}\fontsize{12pt}{12pt}\selectfont}
+
+% Use Arial font as default
+%
+\renewcommand{\rmdefault}{phv}
+\renewcommand{\sfdefault}{phv}
+\usepackage{geometry}	
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+
+%\usepackage{setspace}
+%\renewcommand{\baselinestretch}{1.5}
+
+\usepackage[pdftex]{hyperref} % enhance documents that are to be
+                              % output as HTML and PDF
+\hypersetup{colorlinks,       % color text of links and anchors,
+                              % eliminates borders around links
+%            linkcolor=red,    % color for normal internal links
+            linkcolor=black,  % color for normal internal links
+            anchorcolor=black,% color for anchor text
+%            citecolor=green,  % color for bibliographical citations
+            citecolor=black,  % color for bibliographical citations
+%            filecolor=magenta,% color for URLs which open local files
+            filecolor=black,  % color for URLs which open local files
+%            menucolor=red,    % color for Acrobat menu items
+            menucolor=black,  % color for Acrobat menu items
+%            pagecolor=red,    % color for links to other pages
+            pagecolor=black,  % color for links to other pages
+%            urlcolor=cyan,    % color for linked URLs
+            urlcolor=black,   % color for linked URLs
+	          bookmarks=true,         % create PDF bookmarks
+	          bookmarksopen=false,    % don't expand bookmarks
+	          bookmarksnumbered=true, % number bookmarks
+	          pdftitle={report},
+            pdfauthor={Andre C. Marta},
+%            pdfsubject={Thesis Title},
+%            pdfkeywords={Thesis Keywords},
+            pdfstartview=FitV,
+            pdfdisplaydoctitle=true}
+
+\usepackage[numbers,sort&compress]{natbib} % <<<<< References in numbered list [1],[2],...
+\usepackage{subcaption} 
+\usepackage{mdframed}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{subfiles}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+%\usepackage[nottoc]{tocbibind}
+\usepackage{lastpage}
+\newcommand{\clap}{\makebox[0pt]}
+\usepackage{titlesec}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\geometry{margin=0.67in}
+
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
+\graphicspath{ {./Imagens/} }
+
+\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black} 
+
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Circuit Theory and Electronics Fundamentals}
+\lhead{Group 21}
+\cfoot{Página  \thepage \hspace{1pt} de \pageref{LastPage}}
+\pagenumbering{roman}
+
+\begin{document}
+
+
+\begin{titlepage}
+	\begin{center}
+		\begin{figure}[htb!]
+			\begin{center}
+				\includegraphics[width=10cm]{tecnico.png}
+			\end{center}
+		\end{figure}
+		
+        \vspace{30pt}
+        \begin{center}
+        \Large{\center Integrated Masters in Aerospace Engineering, Técnico, University of Lisbon}\\
+        \Large{\center Circuit Theory and Electronics Fundamentals}\\
+        \end{center}
+            
+        \vspace{60pt}
+        \Huge{\textbf{Laboratory Report 2}}
+        
+        \vspace{120pt}
+        \begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\emph{\LARGE{\textbf{Grupo 21:}}}\par \vspace{10pt}
+			95791, Francisco Carvalho \\ \vspace{20pt}
+            95805, João Matias\\ \vspace{20pt}
+            95846, Simão Gonçalves\\ \vspace{20pt}
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}[b]{0.4\textwidth}
+		\begin{flushright} \large
+        	{}
+		\end{flushright}
+	\end{minipage}\\[2cm]
+       \vspace{10pt}
+        \large{April 2021}\\
+	\end{center}
+\end{titlepage}
+
+\newpage
+\renewcommand{\contentsname}{Índice}
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{3}
+
+\include{Intro}
+\include{Teorica}
+\include{Simul}
+\include{Concl}
+
+
+
+
+
+
+\end{document}
+

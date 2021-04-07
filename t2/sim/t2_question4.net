@@ -10,7 +10,8 @@
 
 
 .model group 21
-
+.op
+.end
 .control
 set hcopypscolor=0
 set color0=white
@@ -29,12 +30,11 @@ echo "*******************"
 tran 1e-5 20e-3
 
 hardcopy question_4.ps v(6) v(1)
-echo question_4_fig
+echo question_4_FIG
 
 
 
-quit
+
 .endc
 
-.end
 

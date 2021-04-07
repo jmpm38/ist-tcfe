@@ -10,7 +10,8 @@ GROUP 21 - LAB 2 TCFE
 
 
 .model group 21
-
+.op
+.end
 .control
 
 op
@@ -19,10 +20,12 @@ echo "*******************"
 echo RESULTS - QUESTION 1
 echo "*******************"
 
+echo "Q1_TAB"
 print all
+echo "Q1_END"
 
-quit
+
 .endc
 
-.end
+
 
