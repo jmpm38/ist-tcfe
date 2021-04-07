@@ -19,17 +19,17 @@ Kb=sscanf(char(t(13,1)), "Kb = %e")/1000;
 Kd=sscanf(char(t(14,1)), "Kd = %e")*1000;
 
 printf("Data_Gen_TAB\n");
-printf("R1 = %e A\n",R1);
-printf("R2 = %e A\n",R2);
-printf("R3 = %e A\n",R3);
-printf("R4 = %e A\n",R4);
-printf("R5 = %e A\n",R5);
-printf("R6 = %e A\n",R6);
-printf("R7 = %e A\n",R7);
-printf("Vs = %e A\n",Vs);
-printf("C = %e A\n",C);
-printf("Kb = %e A\n",Kb);
-printf("Kd = %e A\n",Kd);
+printf("R1 = %e kOh,\n",R1);
+printf("R2 = %e kOhm\n",R2);
+printf("R3 = %e kOhm\n",R3);
+printf("R4 = %e kOhm\n",R4);
+printf("R5 = %e kOhm\n",R5);
+printf("R6 = %e kOhm\n",R6);
+printf("R7 = %e kOhm\n",R7);
+printf("Vs = %e V\n",Vs);
+printf("C = %e uF\n",C);
+printf("Kb = %e mS\n",Kb);
+printf("Kd = %e kOhm\n",Kd);
 printf("Data_Gen_END\n");
 
 %Cálculo das Condutâncias
