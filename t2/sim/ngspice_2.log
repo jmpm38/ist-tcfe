@@ -1,0 +1,158 @@
+
+Circuit: group 21 - lab 2 tcfe
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 1
+*******************
+RESULTS - QUESTION 2
+*******************
+Q2_TAB
+@gb[i] = 0.000000e+00
+@r1[i] = 0.000000e+00
+@r2[i] = 0.000000e+00
+@r3[i] = 0.000000e+00
+@r4[i] = 0.000000e+00
+@r5[i] = -2.78567e-03
+@r6[i] = 0.000000e+00
+@r7[i] = 0.000000e+00
+v(1) = 0.000000e+00
+v(2) = 0.000000e+00
+v(3) = 0.000000e+00
+v(5) = 0.000000e+00
+v(6) = 8.563007e+00
+v(7) = 0.000000e+00
+v(8) = 0.000000e+00
+v(9) = 0.000000e+00
+hd#branch = 2.785669e-03
+vaux#branch = 0.000000e+00
+vs#branch = 0.000000e+00
+vx#branch = -2.78567e-03
+Q2_END
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 1
+	Node                                  Voltage
+	----                                  -------
+	----	-------
+	V(8)                             0.000000e+00
+	V(9)                             0.000000e+00
+	V(7)                             0.000000e+00
+	V(6)                             8.563007e+00
+	V(5)                             0.000000e+00
+	V(3)                             0.000000e+00
+	V(2)                             0.000000e+00
+	V(1)                             0.000000e+00
+
+	Source	Current
+	------	-------
+
+	@gb[i]                           0.000000e+00
+	@r7[i]                           0.000000e+00
+	@r6[i]                           0.000000e+00
+	@r5[i]                           -2.78567e-03
+	@r4[i]                           0.000000e+00
+	@r3[i]                           0.000000e+00
+	@r2[i]                           0.000000e+00
+	@r1[i]                           0.000000e+00
+	vs#branch                        0.000000e+00
+	vx#branch                        -2.78567e-03
+	vaux#branch                      0.000000e+00
+	hd#branch                        2.785669e-03
+
+ Resistor models (Simple linear resistor)
+      model                     R
+
+        rsh                     0
+     narrow                     0
+      short                     0
+        tc1                     0
+        tc2                     0
+        tce                     0
+       defw                 1e-05
+          l                 1e-05
+         kf                     0
+         af                     0
+          r                     0
+     bv_max                 1e+99
+         lf                     1
+         wf                     1
+         ef                     1
+
+ CCVS: Linear current controlled current source
+     device                    hd
+          i            0.00278567
+          v                     0
+          p                     0
+
+ Resistor: Simple linear resistor
+     device                    r7                    r6                    r5
+      model                     R                     R                     R
+ resistance               1037.56               2042.81               3073.95
+         ac               1037.56               2042.81               3073.95
+      dtemp                     0                     0                     0
+     bv_max                 1e+99                 1e+99                 1e+99
+      noisy                     1                     1                     1
+          i                     0                     0           -0.00278567
+          p                     0                     0             0.0238537
+
+ Resistor: Simple linear resistor
+     device                    r4                    r3                    r2
+      model                     R                     R                     R
+ resistance               4168.98               3060.19               2055.57
+         ac               4168.98               3060.19               2055.57
+      dtemp                     0                     0                     0
+     bv_max                 1e+99                 1e+99                 1e+99
+      noisy                     1                     1                     1
+          i                     0                     0                     0
+          p                     0                     0                     0
+
+ Resistor: Simple linear resistor
+     device                    r1
+      model                     R
+ resistance                  1049
+         ac                  1049
+      dtemp                     0
+     bv_max                 1e+99
+      noisy                     1
+          i                     0
+          p                     0
+
+ VCCS: Voltage controlled current source
+     device                    gb
+          m                     0
+          i                     0
+          v               8.56301
+          p                     0
+
+ Vsource: Independent voltage source
+     device                  vaux                    vx                    vs
+         dc                     0               8.56301                     0
+      acmag                     0                     0                     0
+      pulse         -         -         -
+        sin         -         -         -
+        exp         -         -         -
+        pwl         -         -         -
+       sffm         -         -         -
+         am         -         -         -
+    trnoise         -         -         -
+   trrandom         -         -         -
+          i                     0           -0.00278567                     0
+          p                    -0             0.0238537                    -0
+
+
+Total analysis time (seconds) = 0
+
+Total elapsed time (seconds) = 0.002 
+
+Total DRAM available = 7961.031 MB.
+DRAM currently available = 5677.625 MB.
+Total ngspice program size =   21.852 MB.
+Resident set size =    9.859 MB.
+Shared ngspice pages =    7.961 MB.
+Text (code) pages =    5.070 MB.
+Stack = 0 bytes.
+Library pages =    2.109 MB.
+
