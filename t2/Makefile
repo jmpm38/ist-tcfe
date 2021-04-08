@@ -10,4 +10,6 @@ clean:
 	make -C sim clean
 	make -C doc clean
 
+	@rm -f data.txt
+
 .PHONY: all clean 
