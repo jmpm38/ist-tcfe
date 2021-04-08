@@ -182,7 +182,7 @@ $\begin{bmatrix}
 \paragraph{}
 \par The tables below contain the amplitudes and the phases of the differents nodes,that allows us to compute the complex amplitude of every node voltage. So, $V_{6} = A*cos(wt + \phi)$, and you can see the amplitude and the phase below.
 
-\begin{table}[h]
+\begin{table}[!h]
 \centering
 \begin{tabularx}{0.6\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -193,7 +193,7 @@ $\begin{bmatrix}
 \caption{Amplitudes of nodal voltages in V}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[!h]
 \centering
 \begin{tabularx}{0.6\textwidth} {
   | >{\raggedright\arraybackslash}X
@@ -203,6 +203,8 @@ $\begin{bmatrix}
 \end{tabularx}
 \caption{Phases of nodal voltages in Rad}
 \end{table}
+
+\newpage
 
 \subsection{Final Solution $V_{6}$(t), in the interval [0,20]ms}
 
@@ -242,7 +244,7 @@ horizontal line, with the value zero (0=log10(1)).
 On the other hand, as the frequency is increasing, the magnitudes of $V_6$ and $V_c$ decrease. As it is expected in a  RC circuit, due to the capacitor's impedance $(Z_C = 1/j*w*C)$, the value of $V_c$ changes.
 
 \begin{figure}[!h]\centering
-\includegraphics[width=0.7\linewidth]{amplitude.eps}
+\includegraphics[width=0.5\linewidth]{amplitude.eps}
 \caption{Amplitude}
 \label{fig:snat}
 \end{figure}
@@ -252,7 +254,7 @@ On the other hand, as the frequency is increasing, the magnitudes of $V_6$ and $
 The angles are in degrees. As we expected the phase of $V_{s}$ is 0, and the phase of $V_{c}$ tends to -90° and $V_{6}$ to -180°, as the frequency is increasing. In the plot below we can see the evolution.
 
 \begin{figure}[!h]\centering
-\includegraphics[width=0.7\linewidth]{phase.eps}
+\includegraphics[width=0.5\linewidth]{phase.eps}
 \caption{Phase}
 \label{fig:snat}
 \end{figure}
