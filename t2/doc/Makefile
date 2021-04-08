@@ -10,7 +10,6 @@ $(FILE).pdf: $(wildcard *.tex) $(LODFIGS)
 	cp -f ../mat/*.tex .
 	cp -f ../sim/*.pdf .
 	cp -f ../sim/*.tex .
-	cp -f ../sim/*.ps .
 	pdflatex $(FILE).tex
 	pdflatex $(FILE).tex
 	pdflatex $(FILE).tex

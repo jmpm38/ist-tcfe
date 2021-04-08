@@ -132,20 +132,20 @@ The purpose of this task was calculate the natural response of the circuit, spec
     V_{6n} = V_{c}*e^{-\frac{t}{C*R_{eq}}}
 \end{equation}
 
-\begin{figure}[h] \centering
-\includegraphics[width=0.7\linewidth]{Circuito3.pdf}
+\begin{figure}[!h] \centering
+\includegraphics[width=0.5\linewidth]{Circuito3.pdf}
 \caption{Third Circuit}
 \label{fig:snat}
 \end{figure}
 
-\begin{figure}[h] \centering
+\begin{figure}[!h] \centering
 \includegraphics[width=0.7\linewidth]{naturalsolution.eps}
 \caption{Natural Solution $v_{6n}(t)$, $t\in[0,20]$ ms}
 \label{fig:snat}
 \end{figure}
 
 
-
+\newpage
 \subsection{Forced Solution $V_{6f}$(t), in the interval [0,20]ms}
 
 \par In a forced circuit the voltages in the nodes will have the same frequency as the source. Consequently, the voltage in the node will be something like $V_{node} = V_{node_{max}}*cos(wt + \phi_{node})$. In order to determine the voltages in the nodes, we have to determine their amplitudes and phases. In other words, we have to calculate their complex amplitude. In complex terms, the voltage in the nodes will be in the form $V_{node} =
@@ -224,7 +224,7 @@ The final solution for $V_s$(t) is:
 
 In the following plot you can see this evolutions:
 
-\begin{figure}[h] \centering
+\begin{figure}[!h]\centering
 \includegraphics[width=0.7\linewidth]{forced_and_natural_solution.eps}
 \caption{Final Solution}
 \label{fig:snat}
@@ -241,7 +241,7 @@ The magnitude of $V_s$ is constant despite the variation of the frequency of the
 horizontal line, with the value zero (0=log10(1)).
 On the other hand, as the frequency is increasing, the magnitudes of $V_6$ and $V_c$ decrease. As it is expected in a  RC circuit, due to the capacitor's impedance $(Z_C = 1/j*w*C)$, the value of $V_c$ changes.
 
-\begin{figure}[h] \centering
+\begin{figure}[!h]\centering
 \includegraphics[width=0.7\linewidth]{amplitude.eps}
 \caption{Amplitude}
 \label{fig:snat}
@@ -251,7 +251,7 @@ On the other hand, as the frequency is increasing, the magnitudes of $V_6$ and $
 
 The angles are in degrees. As we expected the phase of $V_{s}$ is 0, and the phase of $V_{c}$ tends to -90° and $V_{6}$ to -180°, as the frequency is increasing. In the plot below we can see the evolution.
 
-\begin{figure}[h] \centering
+\begin{figure}[!h]\centering
 \includegraphics[width=0.7\linewidth]{phase.eps}
 \caption{Phase}
 \label{fig:snat}
