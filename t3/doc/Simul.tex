@@ -1,0 +1,160 @@
+\section{Simulation Analysis}
+\label{simuanal}
+
+In order to understand the values obtained in our simulation, it is important to note a couple of things:
+\begin{itemize}
+    \item Node 4 is considered to be ground, therefore, its' voltage is not shown in the table of results, but is, obviously, 0V.
+    \item To compute the voltage drop through the dependent voltage source ($V_d$), we needed to obtain
+the current value through resistor R6. However, Ngspice doesn’t allow us to input Resistor $R_6$ current in the computation. Hence, in order to solve this problem, we introduced a voltage source
+with no voltage drop in series with the $R_6$ resistor. This way, we managed to obtain the current
+through it, and therefore we were able to compute the dependent voltage source $V_d$.
+\end{itemize}
+
+\subsection{Circuit Analysis for $t \leq 0 $}
+
+For $t < 0$, the voltage source (Va) is producing a constant voltage source of value Vs. Therefore, the capacitor behaves as an open circuit. After running the Ngspice script, we obtained the following results:
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{Q1_tab.tex}
+\end{tabularx}
+\caption{Nodal Voltage Simulation Results. Variables expressed in V or A}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{Voltages_Question_1_tab.tex}
+\end{tabularx}
+\caption{Theoretical Nodal Voltages expressed in V}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{Currents_Question_1_tab.tex}
+\end{tabularx}
+\caption{Theoretical Nodal Voltages expressed in A}
+\end{table}
+
+\subsection{$R_{eq}$ Calculus, and Circuit Analysis for $t=0$}
+
+In the second simulation, the open circuit branch of the capacitor was replaced with a voltage source, with voltage $V_x=V_6-V_8$. This step was needed to calculate the equivalent Thévenin resistance, which can be obtained through the following expression:
+\begin{equation}
+     R_{eq}=\frac{V_6-V_8}{I_x}
+\end{equation}
+
+
+with $I_x$ being the current through the voltage source previously defined $V_x$.
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{Q2_tab.tex}
+\end{tabularx}
+\caption{Nodal Voltage Simulation results. Variables expressed in V}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{Voltages_Question_2_tab.tex}
+\end{tabularx}
+\caption{Theoretical results expressed in V, A and Ohm}
+\end{table}
+
+\newpage
+\subsection{Circuit Analysis for $t \geq 0 $ (Natural Solution)}
+
+For the third simulation, we performed a transient analysis of the given circuit, which is similar to the one done in the previous section. The main difference is the introduction of the capacitor instead of the voltage source between nodes 6 and 8, and the fact that the voltage source is turned off. With this, we run the Ngspice script to obtain the natural solution of the circuit.
+
+\begin{figure}[h!]\centering
+\includegraphics[width=0.5\linewidth]{question_3.pdf}
+\caption{Natural Solution (Ngspice)}
+\label{fig:snat}
+\end{figure}
+
+\begin{figure}[h!] \centering
+\includegraphics[width=0.5\linewidth]{naturalsolution.eps}
+\caption{Natural Solution (Octave)}
+\label{fig:snat}
+\end{figure}
+
+
+We can conclude that the capacitor is discharging over time, as expected, concluding that the theoretical analysis and the simulation, match.
+
+\newpage
+\subsection{Circuit Analysis for $t \geq 0 $ (Natural and Forced Solution)}
+
+In this section we also performed a transient analysis, making a few changes to the circuit, in order to obtain a plot of the natural and forced solution. Therefore, we took in consideration the sinusoidal variation of the voltage source over time, plotting that in our computation.
+
+\begin{figure}[h!] \centering
+\includegraphics[width=0.5\linewidth]{question_4.pdf}
+\caption{Final Solution (NGSpice)}
+\label{fig:snat}
+\end{figure}
+
+\begin{figure}[h!] \centering
+\includegraphics[width=0.6\linewidth]{forced_and_natural_solution.eps}
+\caption{Final Solution (Octave)}
+\label{fig:snat}
+\end{figure}
+
+As we can see from the pictures above, both Octave and Ngspice results match perfectly. W can conclude that the voltage in the capacitor diminishes until it has a phase difference of $\pi$, in comparison to the voltage source, as expected in the theoretical analysis.
+\newpage
+\subsection{Frequency Responses}
+
+For this section, we conducted and Alternating Current (AC) Analysis. With this, we were able to study the frequency response of the circuit. It is important to note that there is no frequency variation, which means we are performing a steady-state analysis. After examination of the graphics below, it is clear that the results from Octave match the ones of Ngspice clear, where any minor difference may be explained by approximation errors.
+
+\subsubsection{Frequency Responses - Amplitude}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{amplitude.eps}
+  \captionof{figure}{Amplitude (Octave)}
+  \label{fig:test1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{question5_db.pdf}
+  \captionof{figure}{Amplitude (Ngspice}
+  \label{fig:test2}
+\end{subfigure}
+\end{figure}
+
+\newpage
+\subsubsection{Frequency Responses - Phase}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{phase.eps}
+  \captionof{figure}{Phase (Octave)}
+  \label{fig:test1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{question5_ph.pdf}
+  \captionof{figure}{Phase (Ngspice)}
+  \label{fig:test2}
+\end{subfigure}
+\end{figure}
