@@ -35,7 +35,7 @@ for i = 1:20
   t_on = t_on - (f/fl);
 endfor
 
-t = 0:(1e-6):0.2;
+t = 0:(1e-4):0.2;
 
 l = length(t);
 
