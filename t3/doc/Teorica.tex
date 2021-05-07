@@ -1,6 +1,6 @@
 \section{Theoretical Analysis}
 \label{Teorica}
-In this section, we are going to show how we proceed to to fulfill the goal of this lab.
+In this section, we are going to show how we proceed to fulfill the goal of this lab.
 
 \par 1) We used a transformer to transform Vs=230V in a smaller value ($V_{s}/n$ with n=10), but with this we still had an AC voltage, and we want a DC voltage.
  \par
@@ -21,7 +21,7 @@ In this section, we are going to show how we proceed to to fulfill the goal of t
  and to compute $ton$ we use the equation 
  
  \begin{equation}
- Vs/n)*cos(w*t_{on})=-(Vs/n)*cos(w*t_{off})*exp(-(1/(Req*C))*(t_{on}-t_{off})) 
+ (Vs/n)*cos(w*t_{on})=-(Vs/n)*cos(w*t_{off})*exp(-(1/(Req*C))*(t_{on}-t_{off})) 
  \end{equation}
  
  
@@ -52,7 +52,7 @@ In this section, we are going to show how we proceed to to fulfill the goal of t
  \par
  4)Lastly, we use a total of 22 diodes and a resistor to make the voltage in the output of the voltage regulator circuit an almost perfect 12V DC voltage. To do this we did an incremental analyses. So, the $v0_{reg} = v0reg_{ac} + v0reg_{dc}$ . To compute the $v0reg_{ac}$ we use the voltage divider between the resistance and the equivalent resistances of the diodes in the incremental analyses. The average voltage and the ripple obtained are shown in the table below.
  
- \par (tabela com ripple e average do regulator)
+ \par 
 \begin{table}[h]
 \centering
 \begin{tabularx}{0.6\textwidth} {
@@ -64,7 +64,7 @@ In this section, we are going to show how we proceed to to fulfill the goal of t
 \caption{Ripple and Average Voltages of the Regulator}
 \end{table}
  \par
- (plots, temos de fazer mais referencias aos plots em cima no texto)
+
  
  \begin{figure}[!h]\centering
 \includegraphics[width=0.7\linewidth]{graph1.eps}
@@ -74,7 +74,7 @@ In this section, we are going to show how we proceed to to fulfill the goal of t
 
 \begin{figure}[!h]\centering
 \includegraphics[width=0.7\linewidth]{graph2.eps}
-\caption{Output AC component + DC deviation}
+\caption{Output AC component - DC deviation}
 \label{fig:snat2}
 \end{figure}
 

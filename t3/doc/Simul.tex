@@ -11,7 +11,7 @@ Then, the values of n (parameter of dependency of the dependent sources), the ca
  \hline
 \input{op1_tab.tex}
 \end{tabularx}
-\caption{Results for the voltage regulator (Ngspice)}
+\caption{Results for the envelope detector (Ngspice)}
 \end{table}
 
 \begin{table}[h]
@@ -106,6 +106,14 @@ As for the cost and figure of merit, these are shown in table 9.
     1/ (509* ((maximum(v(5))-minimum(v(5))) + abs(mean(v(5)-12)) + 10e-6))
 \end{equation}
 
-
-
+\begin{table}[!h]
+\centering
+\begin{tabularx}{1\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{op3_tab.tex}
+\end{tabularx}
+\caption{Merit Figure (Ngspice)}
+\end{table}
 
