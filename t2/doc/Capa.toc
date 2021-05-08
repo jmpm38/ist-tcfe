@@ -1,0 +1,21 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Theoretical Analysis}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Nodal Method for t $<$ 0}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Determination of the resistance $R_{eq}$}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Natural Solution $V_{6n}$(t), in the interval [0,20]ms}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Forced Solution $V_{6f}$(t), in the interval [0,20]ms}{7}{subsection.2.4}%
+\contentsline {paragraph}{}{7}{equation.2.8}%
+\contentsline {subsection}{\numberline {2.5}Final Solution $V_{6}$(t), in the interval [0,20]ms}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Frequency response for $V_c$(f), $V_6$(f) and $V_s$(f)}{9}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Magnitude}{9}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Phase}{9}{subsubsection.2.6.2}%
+\contentsline {section}{\numberline {3}Simulation Analysis}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Circuit Analysis for $t \leq 0 $}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}$R_{eq}$ Calculus, and Circuit Analysis for $t=0$}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Circuit Analysis for $t \geq 0 $ (Natural Solution)}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Circuit Analysis for $t \geq 0 $ (Natural and Forced Solution)}{13}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Frequency Responses}{14}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Frequency Responses - Amplitude}{14}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Frequency Responses - Phase}{15}{subsubsection.3.5.2}%
+\contentsline {section}{\numberline {4}Conclusion}{16}{section.4}%
