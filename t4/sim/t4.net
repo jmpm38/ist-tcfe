@@ -27,7 +27,7 @@ echo "Vce = $&Vce V"
 let Vbe=v(base)-v(emit)
 echo "Vbe = $&Vbe V"
 if (Vce>Vbe)
-echo "Correct F.A.R"
+echo "Correct F.A.R = yes"
 else
 echo "Wrong F.A.R"
 endif
@@ -42,7 +42,7 @@ echo "Vec = $&Vec V"
 let Veb=v(emit2)-v(coll)
 echo "Veb = $&Veb V"
 if (Vec>Veb)
-echo "Correct F.A.R"
+echo "Correct F.A.R = yes"
 else
 echo "Wrong F.A.R"
 endif

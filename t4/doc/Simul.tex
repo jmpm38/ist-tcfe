@@ -7,13 +7,29 @@ In this section of our report, we are going to simulate the modeled circuit usin
 First of all, it's important to analyse and ensure the transistors are working in the desired region as, otherwise, none of our predictions would be validated.
 First of all, taking a look at the NPN transistor, which is present on the gain stage, the condition for operating on the forward active region is that $V_{CE}>V_{BE}$. In the simulation, we obtained the following results:
 
---TABELA COM A CONFIRMAÇÃO DA FAR NPN TAB
+\begin{table}[h]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{NPN_tab.tex}
+\end{tabularx}
+\caption{NPN transistor in forward active region}
+\end{table}
 
 On the other hand, for the PNP transistor, present on the ouput stage, the condition for operating in the forward active region is $V_{EC}>V_{EB}$. In the simulation, we obtained the following results:
 
-
---TABELA COM A CONFIRMAÇÃO DA FAR PNP TAB
-
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{PNP_tab.tex}
+\end{tabularx}
+\caption{PNP transistor in forward active region}
+\end{table}
 Now it's important to analyse certain components of the circuit to fully understand their functioning.
 
 \subsection{Coupling Capacitors}
@@ -42,9 +58,27 @@ Finally, the effect of $R_C$ on the circuit gain is important to be studied. As 
 Now, we will take a look at the output and input impedances, which are computed in the tables below:
 
 
----TABELA Zin
-----TABELA opZO
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{Zin_tab.tex}
+\end{tabularx}
+\caption{Input impedance in Ohm}
+\end{table}
 
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{opZO_tab.tex}
+\end{tabularx}
+\caption{Output impedance in Ohm}
+\end{table}
 As previously explained, when looking at the impedances, we expect the impedance seen by the input voltage generator to be really high, in order to minimize the voltage drop due to the internal resistance of the voltage generator (following the voltage divider formula). On the other hand, when looking at the output impedance, we expect it to be really low, so the load resistor takes almost full advantage of the voltage, when looking at the voltage divider formula. As you can see in the table above, the output impedance is still quite high when compared to the 8 Ohm load resistor. This is due to the optimal merit value obtained in our Matlab optimization.
 
 
@@ -53,17 +87,31 @@ As previously explained, when looking at the impedances, we expect the impedance
 
 Finally, after explaining our thought process and the way components impacted our circuit, let's take a look at the merit figure, as well as all the important values that should be taken in consideration in its calculation.
 
---TABELA COM BANDWIDTH, LCO, HCO, COST, GAIN AND MERIT
-
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{values_tab.tex}
+\end{tabularx}
+\caption{Simulation results}
+\end{table}
 \subsection{Comparison between Theoretical and Simulation Analysis}
 
 Even though we are pretty satisfied with our simulation results, it is important to note that are some discrepancies between the theoretical and the simulation analysis. This could be due to some errors associated with the theoretical model used, when compared to the "real" one in NGspice.
 
+\begin{figure}[H]\centering
+\includegraphics[width=0.7\linewidth]{grafico_octave.eps}
+\caption{Theoretical Output Voltage}
+\label{fig:snat}
+\end{figure}
 
 
-
---GRÁFICO OCTAVE grafico octave
-
---GRÁFICO NGSPICE vo2f
+\begin{figure}[H]\centering
+\includegraphics[width=0.7\linewidth]{vo2f.pdf}
+\caption{Simulation Output Voltage}
+\label{fig:snat}
+\end{figure}
 
 Looking at both graphics, we can testify that the prediction of our theoretical model is accurate, in comparison to the simulation.
