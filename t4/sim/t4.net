@@ -59,7 +59,7 @@ ac dec 10 10 100MEG
 *plot vdb(coll)
 *plot vp(coll)
 *plot vdb(in)
-*hardcopy vo1f.ps {vdb(coll)}
+hardcopy vo1f.ps {vdb(coll)}
 echo vo1f_FIG 
 
 *plot vdb(out)
