@@ -116,22 +116,22 @@ printf ("Max Gain = %e V\n", max(Tdb));
 printf ("valores_END\n\n");
 
 %Ponto 2 Teorica
-printf ("ponto2_TAB\n");
+printf ("ganhogain_TAB\n");
 printf ("AV1dB = %e dB\n", AV1_DB);
 printf ("ZI1 = %e \Omega \n", ZI1);
 printf ("ZO1 = %e \Omega \n", ZO1);
-printf ("ponto2_END\n");
+printf ("ganhogain_END\n");
 
-printf ("ponto3_TAB\n");
+printf ("ganhooutput_TAB\n");
 printf ("AV2dB = %e dB\n", AV2_DB);
 printf ("ZI2 = %e \Omega \n", ZI2);
 printf ("ZO2 = %e \Omega \n", ZO2);
-printf ("ponto3_END\n");
+printf ("ganhooutput_END\n");
 
-printf ("ponto4_TAB\n");
+printf ("ganhototal_TAB\n");
 printf ("AVdB = %e dB\n", AV_DB);
 printf ("ZO = %e \Omega\n", ZO);
-printf ("ponto4_END\n");
+printf ("ganhototal_END\n");
 
 
 %Ponto 3 Teorica
