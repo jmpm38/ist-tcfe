@@ -62,12 +62,12 @@ ylabel ("Phase Degrees");
 
 print (fase, "fase", "-depsc");
 
-printf ("resultados_TAB\n");
+printf ("merito_TAB\n");
 printf ("Central Frequency Deviation = %e Hz \n", freq_deviation);
 printf ("Gain Deviation = %e dB \n", gain_deviation);
 printf ("Cost = %e MU \n", Cost);
 printf ("Merit = %e \n", Merit);
-printf ("resultados_END\n\n");
+printf ("merito_END\n\n");
 
 printf ("frequencias_TAB\n");
 printf ("Lower Cut Off Frequency = %e rad/s\n", wL);
@@ -75,16 +75,12 @@ printf ("Higher Cut Off Frequency = %e rad/s\n", wH);
 printf ("Central Frequency = %e rad/s\n", w0);
 printf ("frequencias_END\n\n");
 
-printf ("comparacao_TAB\n");
-printf ("Gain = %e dB \n", Gain_w0_dB);
-printf ("Central Frequency = %e Hz\n", w0/(2*pi));
-printf ("Gain Deviation = %e dB \n", gain_deviation);
-printf ("Central Frequency Deviation = %e Hz \n", freq_deviation);
-printf ("comparacao_END\n\n");
 
 printf ("ganhos_TAB\n");
-printf ("Gain = %e \n", Gain_w0);
-printf ("Gain = %e dB \n", Gain_w0_dB);
+printf ("Central Frequency = %e \n", Gain_w0);
+printf ("Gain (dB) = %e dB \n", Gain_w0_dB);
+printf ("Gain Deviation = %e dB \n", gain_deviation);
+printf ("Central Frequency Deviation = %e Hz \n", freq_deviation);
 printf ("ganhos_END\n\n");
 
 printf ("impedancias_TAB\n");
