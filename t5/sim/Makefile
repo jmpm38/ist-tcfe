@@ -6,6 +6,9 @@ all_1: ngspice1.log
 	$(eval NGSFIGPS=$(addsuffix .ps, $(NGSFIGS)))
 	$(foreach i, $(NGSFIGPS), ps2pdf $i;)
 	
+	ps2pdf vo1f.ps vo1f.pdf
+	ps2pdf vo2f.ps vo2f.pdf
+	
 ngspice1.log: t5.net
 	ngspice -b $< -o $@
 	
@@ -18,6 +21,7 @@ all_2: ngspice2.log
 	
 ngspice2.log: t5_2.net
 	ngspice -b $< -o $@
+	
 	
 clean:
 	@rm -f *.tex *.pdf *.ps *~ *.log
