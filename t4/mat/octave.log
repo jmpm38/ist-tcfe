@@ -1,0 +1,33 @@
+valores_TAB
+VCE = 6.698985e+00 V
+VBEON = 7.000000e-01 V 
+VEC = 7.503512e+00 V
+VEBON = 7.000000e-01 V 
+IB1 = 5.816344e-06 A 
+IC1 = 1.039381e-03 A 
+IE1 = 1.045197e-03 A 
+IB2 = -3.285189e-05 A 
+IC2 = 7.467235e-03 A 
+IE2 = 7.500087e-03 A 
+Merit = 4.922026e+02 
+HighCutOff frequency = 4.378919e+05 Hz
+LowCutOff frequency = 1.262636e+01 Hz
+Cost = 2.198944e+03 MU's
+Bandwidth = 4.378793e+05 Hz
+Max Gain = 3.111592e+01 V
+valores_END
+
+ganhogain_TAB
+AV1dB = 3.158574e+01 dB
+ZI1 = 2.419700e+03 Omega 
+ZO1 = 4.652716e+03 Omega 
+ganhogain_END
+ganhooutput_TAB
+AV2dB = -9.206606e-02 dB
+ZI2 = 7.217620e+04 Omega 
+ZO2 = 3.312660e+00 Omega 
+ganhooutput_END
+ganhototal_TAB
+AVdB = 3.120913e+01 dB
+ZO = 2.270691e+01 Omega
+ganhototal_END

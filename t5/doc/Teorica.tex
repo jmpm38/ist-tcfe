@@ -1,70 +1,20 @@
 \section{Theoretical Analysis}
-\label{Teorica}
-\subsection{Gain Stage Description}
 
-Firstly, we will make a brief description of how the gain stage works. As previously stated, its objective is to amplify the voltage input. In order to do so we utilize the following components: NPN BJT (negative-positive-negative bipolar junction transistor), Resistors, Capacitors and voltage sources.
+\subsection{Description and Mathematical Considerations}
 
-The $V_{cc}$ voltage source is added with the objective of ensuring the transistor is acting in the Forward Active Region. The condition for operating in such region is $V_{CE}>V_{BE}$.
+The Op-Amp (signal amplifier) used was considered ideal, which means that the internal impedance between v+ and v- is infinite and that there is no current flowing through it (v+ = v-). So, by connecting a capacitor ($C_1$) in series with the input voltage, we made a band pass filter, functioning as a high pass filter. Furthermore, in the final stage of the circuit, another capacitor ($C_2$) was connected in parallel with the output voltage, functioning as a low pass filter. Concluding, this circuit consists of a high pass filter, a signal amplifier and a low pass filter in series.
 
-Both the capacitors have important functions within the circuit. The $C_{in}$ capacitor (coupling capacitor) acts as a DC block, ensuring that the transistor is in the desired operating region. The second capacitor, $C_E$, is a bypass capacitor. Taking a look at the formulae for the capacitor impedance: $\frac{1}{jwc}$, we can understand what this means. For low frequencies, the capacitor impedance is really high, which makes all the current flow through the RE resistor. On the other hand, for high frequencies, the capacitor impedance is really low, making it act almost as a short circuit. Therefore, almost all current flows through it.
+The circuit shown above was analyzed using Octave.
 
-It is also relevant to look at the impedance seen by the input voltage source, as it needs to be a lot greater than the resistance associated with the generator. The formulae is the following:
+Initially we computed the input and the output impedance:
 
 \begin{equation}
-    Z_{I1}= (R_1 || R2) || r_{\pi 1}
-\end{equation}
-
-
-Taking a look at the output impedance formulae (\ref{form1}), we can see that it is really high, in comparison to the load resistance of 8 Ohm. Therefore, by the voltage divider rule, it becomes obvious that we need to add another stage to lower the impedance seen by the load. (note that we are doing a high-frequency analysis, considering $R_E \simeq 0$)
-
-\begin{equation}
-\label{form1}
-     Z_{O1}=r_o || R_C
-\end{equation}
-
-\subsection{Output Stage Description}
-
-As said before, the main goal of the output stage is to lower the output impedance.
-
-
-For this stage, we utilized resistors, a capacitor, a PNP BJT and a voltage source.
-Similarly to what was described in the previous stage, the voltage source is used to ensure the transistor operates in the desired region (forward active region), satisfying the condition for PNP BJT: $V_{EC}>V_{EB}$. Furthermore, the capacitor $C_O$ also acts as a coupling transistor, blocking the DC and ensuring the transistor stays in the forward active region.
-
-
-Again, it is also relevant to look at the impedance seen by the input voltage source (\ref{form2}), as it needs to be much lower than $Z_{O1}$, so that there is no loss between both stages (voltage divider formulae, equation X). 
-
-\begin{equation}
-\label{form2}
-    Z_{I2}=\frac{(g_{m2}+g_{\pi2}+g_{o2}+g_{E2})}{g_{\pi2}(g_{\pi2}+g_{o2}+g_{E2})}
+    Z_{in} = R_1 + \frac{1}{j*w*C}
 \end{equation}
 
 \begin{equation}
-    V_{in2} = \frac{Z_{I2}}{Z_{I2}+Z_{O1}} V_{O2}. 
+    Z_{out} = \frac{R_2}{j*w_0*C_2*(R_2+ \frac{1}{j w C_2})}
 \end{equation}
-
-
-Taking a look at the output impedance formulae (\ref{form3}), we that the output stage achieves its purpose of diminishing the impedance seen by the load.
-
-\begin{equation}
-\label{form3}
-     Z_{O2}=\frac{1}{(g_{m2}+g_{\pi2}+g_{o2}+g_{E2})}
-\end{equation}
-
-
-
-
-\subsection{Merit Figure and Values Determination}
-
-The main goal of this lab was to design the best possible audio amplification circuit. The quality of our work is evaluated with the calculation of a merit figure, which takes into account the following parameters:
--the voltage gain between the voltage generator input, and the load output; 
--the lower cut-off frequency (and higher cut-off frequency), which corresponds to the minimum (and maximum) frequency value of the bandwidth, and represents the first (and last) frequency for which the signal is correctly amplified, which is desired to be as low (as high) as possible. Both these frequencies are calculated by determining when the output voltage is 3db less than the gain;
--the bandwidth of our amplified signal, which is the range of frequencies for which our input signal is correctly amplified (it's calculated by subtracting the higher cut-off frequency by the lower cut-off frequency);
--the cost of the circuit.
-
-The formulae for the merit figure is the following:
-
-
-With the objective to obtain the biggest possible merit figure, we ran an optimization using Simulink, a very useful toolbox of the Matlab program. With this, we obtained the following values for our resistors and capacity of the capacitors:
 
 \begin{table}[H]
 \centering
@@ -72,12 +22,32 @@ With the objective to obtain the biggest possible merit figure, we ran an optimi
   | >{\raggedright\arraybackslash}X
   | >{\raggedleft\arraybackslash}X | }
  \hline
-\input{valores_tab.tex}
+\input{impedancias_tab.tex}
 \end{tabularx}
-\caption{Optimization results and merit}
+\caption{Impedances}
 \end{table}
 
-After discovering all the needed values, we can also plot the gain, input and output impedances of both the circuits.
+Then we computed the gain:
+
+\begin{equation}
+    Gain = A_V * A_H * A_L
+\end{equation}
+
+\begin{equation}
+A_{V}=  1+\frac{R3}{R4}
+\end{equation}
+
+\begin{equation}
+A_{L}=  \frac{1}{1+R2*C2*s}
+\end{equation}
+
+\begin{equation}
+A_{H}=  \frac{R1*C1*s}{1+R1*C1*s}
+\end{equation}
+
+Where $A_V$ is the gain that results from the OP-AMP (signal amplifier), $A_H$ and $A_L$ are the gains that correspond to the high pass and low pass filters, respectively.
+
+Using the previous equations we obtained the gained presented:
 
 \begin{table}[H]
 \centering
@@ -85,39 +55,83 @@ After discovering all the needed values, we can also plot the gain, input and ou
   | >{\raggedright\arraybackslash}X
   | >{\raggedleft\arraybackslash}X | }
  \hline
-\input{ganhogain_tab.tex}
+\input{ganhos_tab.tex}
 \end{tabularx}
-\caption{Gain stage: gain in dB, input and output impedance}
+\caption{Gain}
 \end{table}
 
-\begin{table}[H]
-\centering
-\begin{tabularx}{0.6\textwidth} {
-  | >{\raggedright\arraybackslash}X
-  | >{\raggedleft\arraybackslash}X | }
- \hline
-\input{ganhooutput_tab.tex}
-\end{tabularx}
-\caption{Output stage: gain in dB, input and output impedance}
-\end{table}
+To better understand the frequency response of gain, we plot the following graph (REFERENCIA).  We can see that low and high frequencies have a a low gain and frequencies near to 1000 Hz have the maximum gain, as expected for a band pass filter.
+In the first stage the high pass filter blocks the low frequencies and in the final stage we have a low pass filter that blocks high frequencies. To ensure an high gain, we must focus obtaining an high AV , because near the central frequency both AH and AL will be approximately 1. We can see as well in graph 2(REFERENCIA) the plot for the theoretical phase of the output voltage which is similar to a normal bandpass filter.
 
-\begin{table}[H]
-\centering
-\begin{tabularx}{0.6\textwidth} {
-  | >{\raggedright\arraybackslash}X
-  | >{\raggedleft\arraybackslash}X | }
- \hline
-\input{ganhototal_tab.tex}
-\end{tabularx}
-\caption{Total circuit gain and output impedance}
-\end{table}
-
-And, finally, the frequency response $\frac{V_o(f)}{V_i(f)}$
-
-\begin{figure}[H]\centering
-\includegraphics[width=0.7\linewidth]{grafico_octave.eps}
-\caption{Octave Frequency response}
-\label{fig:snat}
+\begin{figure}[H] \centering
+\includegraphics[width=0.7\linewidth]{fase.eps}
+\caption{Circuit}
+\label{fig:circ}
 \end{figure}
+
+\begin{figure}[H] \centering
+\includegraphics[width=0.7\linewidth]{teoria.eps}
+\caption{Circuit}
+\label{fig:circ}
+\end{figure}
+We also computed the low cutoff frequency and the high cut off frequency, and with those two we compute the central frequency using the following equation:
+
+\begin{equation}
+\omega_{L}= \frac{1}{R1*C1}
+\end{equation}
+
+\begin{equation}
+\omega_{H}= \frac{1}{R2*C2}
+\end{equation}
+
+\begin{equation}
+\omega_{0}= \sqrt{\omega_{L} * \omega_{H}}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{frequencias_tab.tex}
+\end{tabularx}
+\caption{Frequencies}
+\end{table}
+
+The figure of merit was also computed, following the expression presented in section 1.
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{custo_tab.tex}
+\end{tabularx}
+\caption{Cost and merit}
+\end{table}
+
+
+\subsection{Theoretical Results}
+In the graphic below we present the voltage gain of the circuit, has a function of log10(frequency).
+\par
+
+GRAFICO DO VOLTAGE GAIN
+
+\par
+In the following tables you can see the values of the input and output impedances; the low cut-off frequency, high cut-off frequency and central frequency; the gain for the central frequency and the merit obtained and the cost of the circuit.
+
+\par
+TABELA DE INPUT E OUTPUT IMPEDANCES
+
+\par
+TABELA DE CUT OFF FREQ, HOGH CUT OFF FREQ E CENTRAL FREQ
+
+\par
+TABELA CENTRAL FREQ E GAIN RESPETIVO
+
+\par
+TABELA CUSTO E MERITO
 
 

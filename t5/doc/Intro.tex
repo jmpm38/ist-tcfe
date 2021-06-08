@@ -1,18 +1,32 @@
 \section{Introduction}
 
-For the fourth laboratory assignment on our Circuit Theory and Electronics Fundamentals course, we had to improve, design and analyse an Audio Amplifier Circuit, which was especially interesting due to the presence of the BJT (Bipolar Junction Transistors), a new component we recently learned and were looking forward to understand experimentally the way it influences a circuit.
+For the fifth laboratory assignment on our Circuit Theory and Electronics Fundamentals course, we had to dimension and implement a Band Pass Filter (BPF) using an OP-AMP (Operational Amplifier) with a central frequency of 1KHz and a gain at central frequency of 40dB. An OP-AMP  is a DC-coupled high-gain electronic voltage amplifier with a differential input and, usually, a single-ended output. We had available a certain number of components to build the circuit that is shown in the image below. In order to study the behaviour of the circuit, we use Ngspice to measure the output voltage gain in the pass-band, the central frequency, and finally the input and output impedance at the central frequency. Then, we use Octave to do the theoretical analyses (Compute the frequency responses Vo(f)/Vi(f), the gain, and the input and output impedance at the central frequency. In this report, we will perform a comparison between our theoretical analysis and the simulation results, trying to explain any major discrepancies.
+\par
 
-The circuit itself, as explained in our lectures, consisted of two different stages, the Gain Stage (which is designed with the objective of amplifying the voltage, in order to have the most possible gain) and the Output Stage (whose main goal is lowering the impedance of the gain stage, allowing the load to take almost full advantage of the gain). The full circuit can be seen in the picture below.
+To measure the quality of the filter the following equation was used:
+
+\begin{equation}
+    Merit=\frac{1}{cost*gaindeviation*centralfreqdeviation + 10^{-6}}
+\end{equation}
+
+\par
 
 \begin{figure}[ht] \centering
-\includegraphics[width=0.7\linewidth]{lab4.pdf}
+\includegraphics[width=0.7\linewidth]{circ5.pdf}
 \caption{Circuit}
 \label{fig:circ}
 \end{figure}
-
 \par
-In this report, we will perform a comparison between our theoretical analysis and the simulation results, trying to explain any major discrepancies.
-
-
+A table with the values associated to each component is shown below. Note that the variables are in Volts, Ohms or Faradays.
+\par
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.6\textwidth} {
+  | >{\raggedright\arraybackslash}X
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+\input{componentes_tab.tex}
+\end{tabularx}
+\caption{Circuit's components}
+\end{table}
 \clearpage
-

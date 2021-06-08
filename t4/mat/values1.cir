@@ -1,0 +1,33 @@
+.OP
+
+Vcc vcc 0 12
+Vin in 0 0 
+Rin in in2 100 
+
+*input  coupling capacitor
+Ci in2 base 7.500700e-04
+
+*bias circuit
+R1 vcc base 3.999900e+04 
+R2 base 0 2.935400e+03 
+
+*gain stage
+Q1 coll base emit BC547A
+Rc vcc coll 4.999600e+03
+Re emit 0 1.000070e+02
+
+*bypass capacitor
+Cb emit 0 7.500700e-04
+
+*output stage
+Q2 0 coll emit2 BC557A
+Rout emit2 vcc 5.995248e+02
+
+*output coupling capacitor
+Co emit2 out 6.499700e-04
+
+*fonte de teste
+VL out 0 ac 1.0 sin(0 10m 1k)
+
+.END
+
