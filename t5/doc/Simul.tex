@@ -3,7 +3,7 @@
 In this section of the report, we are going to simulate the modeled circuit using Ngspice. Our main objective with this simulation is confirming the validity of our theoretical approach and try to explain any major discrepancies. Therefore, we will be paying close attention to the values of the gain, central frequency and input/output impedances, trying to obtain the best results possible for our application. Finally, we will compute the merit figure, looking forward to having the best possible value.
 
 Firstly, it is important to analyse the frequency domain and determine the output voltage gain. For this, we utilized the .meas function.
-The main goal of our work was designing a passband filter, that would cut both low and very high frequencies, obtaining the following results, which are shown in the table below (\ref{tab6}.
+The main goal of our work was designing a passband filter, that would cut both low and very high frequencies, obtaining the following results, which are shown in the table below (\ref{tab6}).
 
 \begin{table}[H]
 \centering
@@ -81,7 +81,7 @@ analysis, because the OP-AMP is not perfect and ngspice uses a more complex mode
  \hline
 \input{impedancias_tab.tex}
 \end{tabularx}
-\caption{Impedances}
+\caption{Impedances from Octave}
 \end{table}
 
 \begin{table}[H]
@@ -122,7 +122,7 @@ Then looking to the gain response, we can see that both of them are similar, but
  \hline
 \input{ganhos_tab.tex}
 \end{tabularx}
-\caption{Gain}
+\caption{Octave's gain and central frequency}
 \end{table}
 
 
@@ -134,7 +134,7 @@ Then looking to the gain response, we can see that both of them are similar, but
  \hline
 \input{resultados_tab.tex}
 \end{tabularx}
-\caption{Ngspice results}
+\caption{Ngspice's gain and central frequency}
 \label{tab16}
 \end{table}
 
